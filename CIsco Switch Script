@@ -5,28 +5,19 @@ int ran g1/0/1-24
 shut
 
 vlan 500
-name mgmt-r1
+name mgmt
 vlan 501
-name internal-r1
+name internal
 vlan 502
-name external-r1
+name external
 vlan 503
-name storage-r1
-vlan 504
-name mgmt-r2
-vlan 505
-name internal-r2
-vlan 506
-name external-r2
-vlan 507
-name storage-r2
+name storage
 
 
-int ran g1/0/1,g1/0/3,g1/0/5,g1/0/7
+
+int ran g1/0/1-8
 switchport mode trunk allowed vlan 400,401,402,403
 
-int ran g1/0/2,g1/0/4,g1/0/6,g1/0/8
-switchport mode trunk allowed vlan 404,405,406,407
 
 int ran g1/0/1-2
 channel-group 1 mode active
