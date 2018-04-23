@@ -1,7 +1,9 @@
 enable
 conf t
 
-int ran g1/0/1-24
+ip routing
+
+int ran f4/0/1-48
 shut
 
 vlan 500
@@ -15,25 +17,47 @@ name storage
 
 
 
-int ran g1/0/1-8
-switchport mode trunk allowed vlan 400,401,402,403
+int ran f4/0/1-10
+switchport trunk
+switchport mode trunk allowed vlan 500,501,502,503
 
 
-int ran g1/0/1-2
+int ran f4/0/1-2
 channel-group 1 mode active
 no shut
 
-int ran g1/0/3-4
+int ran f4/0/3-4
 channel-group 2 mode active
 no shut
 
-int ran g1/0/5-6
+int ran f4/0/5-6
 channel group 3 mode active
 no shut
 
-int ran g1/0/7-8
+int ran f4/0/7-8
 channel group 4 mode active
 no shut
+
+int ran f4/0/9-10
+channel group 5 mode active
+no shut
+
+int vlan 500
+ip addr 10.5.0.1 255.255.255.0
+no shut
+
+int vlan 501
+ip addr 10.5.1.1 255.255.255.0
+no shut
+
+int vlan 502
+ip addr 10.5.2.1 255.255.255.0
+no shut
+
+int vlan 503
+ip addr 10.5.3.1 255.255.255.0
+no shut
+
 
 ip route 0.0.0.0 0.0.0.0 <ip to outside>
 
