@@ -7,11 +7,11 @@ int ran f4/0/1-48 ! don't shutdown interfaces until we know how to implement Int
 !shut
 
 vlan 500
-name mgmt
+name nti460management
 vlan 510
-name internal
+name nti460internal
 vlan 520
-name storage
+name nti460storage
 
 
 int ran f4/0/17-22
