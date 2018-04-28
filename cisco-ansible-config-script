@@ -1,0 +1,22 @@
+
+vlan 510
+name MGMTTEMP
+
+vlan 520
+name 
+
+vlan 530
+name TUNNELTEMP
+
+int vlan 510
+ip addr 10.0.10.1 255.255.255.0
+no shut
+
+int vlan 520
+ip addr 10.0.20.1 255.255.255.0
+no shut
+
+int vlan 530
+ip addr 10.0.30.1 255.255.255.0
+no shut
+
