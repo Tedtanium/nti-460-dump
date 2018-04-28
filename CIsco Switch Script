@@ -8,37 +8,45 @@ shut
 
 vlan 500
 name mgmt
-vlan 501
+vlan 510
 name internal
-vlan 502
-name external
-vlan 503
+vlan 520
 name storage
 
 
 
-int ran f4/0/1-10
+int ran f4/0/17-22
+desc To Compute Nodes 1-3
 switchport trunk
-switchport mode trunk allowed vlan 500,501,502,503
+switchport mode trunk allowed vlan 500,510
 
+int ran f4/0/23-24
+desc To iSCSI
+switchport mode trunk allowed vlan 510,520 
 
-int ran f4/0/1-2
+int ran f4/0/25-26
+desc To Controller
+switchport mode trunk allowed vlan 500
+channel-group 5 mode active
+no shut
+
+int ran f4/0/17-18
 channel-group 1 mode active
 no shut
 
-int ran f4/0/3-4
+int ran f4/0/19-20
 channel-group 2 mode active
 no shut
 
-int ran f4/0/5-6
+int ran f4/0/21-22
 channel group 3 mode active
 no shut
 
-int ran f4/0/7-8
+int ran f4/0/23-24
 channel group 4 mode active
 no shut
 
-int ran f4/0/9-10
+int ran f4/0/25-26
 channel group 5 mode active
 no shut
 
@@ -46,20 +54,14 @@ int vlan 500
 ip addr 10.5.0.1 255.255.255.0
 no shut
 
-int vlan 501
+int vlan 510
 ip addr 10.5.1.1 255.255.255.0
 no shut
 
-int vlan 502
+int vlan 520
 ip addr 10.5.2.1 255.255.255.0
 no shut
 
-int vlan 503
-ip addr 10.5.3.1 255.255.255.0
-no shut
-
-
-ip route 0.0.0.0 0.0.0.0 <ip to outside>
 
 do wr
 
