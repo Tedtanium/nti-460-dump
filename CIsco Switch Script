@@ -3,8 +3,8 @@ conf t
 
 ip routing
 
-int ran f4/0/1-48
-shut
+int ran f4/0/1-48 ! don't shutdown interfaces until we know how to implement Internet configuration in this script
+!shut
 
 vlan 500
 name mgmt
@@ -12,7 +12,6 @@ vlan 510
 name internal
 vlan 520
 name storage
-
 
 
 int ran f4/0/17-22
