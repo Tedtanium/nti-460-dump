@@ -1,0 +1,8 @@
+Attempted to take off multipathing.
+ - Didn't result in any noticeable changes.
+ 
+Noticed each node is in maintenance mode.
+ - This might be preventing traffic from leaving the NIC on anything but port 80.
+ 
+Opened up the NICs and swapped them between compute 1 and ISCSI.
+ - 
